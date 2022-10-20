@@ -1,18 +1,16 @@
 # flutterflow-socket
 Automatic Hot Reload of Flutter app after Push to repository at FlutterFlow without any manual source pull and app reload.
 
-## Installation
+## 1. Installation
 
 1. position to your FlutterFlow project in terminal `cd /path/to/your/ff/project`
 2. copy directory `./tools` and scripts `./run` and `./watch` from this repository to your existing FlutterFlow app with this command
 
-```bash
-curl -L -k https://github.com/stepanic/flutterflow-socket/archive/refs/heads/main.zip | tar -xz --strip-components=1 flutterflow-socket-main/run flutterflow-socket-main/watch flutterflow-socket-main/tools
-```
+```curl -L -k https://github.com/stepanic/flutterflow-socket/archive/refs/heads/main.zip | tar -xz --strip-components=1 flutterflow-socket-main/run flutterflow-socket-main/watch flutterflow-socket-main/tools```
 
 3. follow the `Setup` instructions
 
-## Setup
+## 2. Setup
 
 1. install dependencies `npm install -- prefix ./tools/github`
 2. install `entr` (for MacOS `brew install entr`)
@@ -24,7 +22,7 @@ curl -L -k https://github.com/stepanic/flutterflow-socket/archive/refs/heads/mai
   - `Content type` = `application/json`
   - `Secret` = `GITHUB_WEBHOOK_SECRET` from `./watch`
 
-## Usage
+## 3. Usage
 
 1. get a `<DEVICE_ID>` with `flutter devices`
 2. run the Flutter app on the device with `./run <DEVICE_ID>`
