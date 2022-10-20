@@ -6,7 +6,7 @@ Automatic Hot Reload of Flutter app after Push to repository at FlutterFlow with
 1. position to your FlutterFlow project in terminal `cd /path/to/your/ff/project`
 2. copy directory `./tools` and scripts `./run` and `./watch` from this repository to your existing FlutterFlow app with this command
 
-```curl -L -k https://github.com/stepanic/flutterflow-socket/archive/refs/heads/main.zip | tar -xz --strip-components=1 flutterflow-socket-main/run flutterflow-socket-main/watch flutterflow-socket-main/tools```
+`curl -L -k https://github.com/stepanic/flutterflow-socket/archive/refs/heads/main.zip | tar -xz --strip-components=1 flutterflow-socket-main/run flutterflow-socket-main/watch flutterflow-socket-main/tools`
 
 3. follow the `Setup` instructions
 
