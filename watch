@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# ------- CONFIGURATION ----------------
+export GITHUB_WEBHOOK_URL="https://smee.io/<CHANNEL_ID>"
+export GITHUB_WEBHOOK_SECRET="ff-my-github-webhook-secret"
+# ------- END CONFIGURATION ------------
+
+echo "Flutter hotreload watch for a DART files changes..."
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+trap ctrl_c INT
+function ctrl_c() {
+  # echo "** Trapped CTRL-C"
+  kill -9 $child_1_pid
+  kill -9 "$$"
+}
+
+# REQUIREMENTS
+# 1. Run `npm install -- prefix ./tools/github`
+# 2. Setup GITHUB_WEBHOOK_URL and GITHUB_WEBHOOK_SECRET in this script and in the GitHub Webhook settings
+$SCRIPT_DIR/./tools/github/listen &
+child_1_pid=$!
+
+while true
+do
+    # 3. install `entr` with `brew install entr`
+    find "$SCRIPT_DIR/./lib/" -name '*.dart' | entr -dnp "$SCRIPT_DIR/./tools/hotreloader.sh" /_
+    sleep 1
+done

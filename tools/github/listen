@@ -1,0 +1,76 @@
+#!/usr/bin/env node
+
+// START - config
+// 1. create webhook proxy at https://smee.io/new
+// 2. set webhook URL and SECRET at https://github.com/<USERNAME/ORG>/<REPO>/settings/hooks/new
+const GITHUB_WEBHOOK_URL = process.env.GITHUB_WEBHOOK_URL; // replace with your own GitHub Webhook Proxy URL
+const GITHUB_WEBHOOK_SECRET = process.env.GITHUB_WEBHOOK_SECRET; // replace with your own GitHub Webhook Secret
+// END - config
+
+const EventSource = require("eventsource");
+const { Webhooks } = require("@octokit/webhooks");
+const { exec } = require("child_process");
+
+const webhooks = new Webhooks({
+  secret: GITHUB_WEBHOOK_SECRET
+});
+
+const WEBHOOK_NAME = "push";
+const WEBHOOK_GIT_REF = "refs/heads/flutterflow";
+const WEBHOOK_GIT_HEAD_COMMIT_AUTHOR_USERNAME = "flutterflow-github-app[bot]";
+
+webhooks.onAny(({ id, name, payload }) => {
+  // console.log(name, "event received", id, payload);
+  
+  if (name === WEBHOOK_NAME) {
+    if (payload.ref === WEBHOOK_GIT_REF) {
+      if (payload.head_commit.author.username === WEBHOOK_GIT_HEAD_COMMIT_AUTHOR_USERNAME) {
+        console.log("Commit from FlutterFlow");
+        const commitId = payload.head_commit.id;
+        const commitTimestamp = payload.head_commit.timestamp;
+        const commitMessage = payload.head_commit.message;
+        console.log("Commit ID: " + commitId);
+        console.log("Commit Timestamp: " + commitTimestamp);
+        console.log("Commit Message: " + commitMessage);
+        console.log("");
+        
+        const isDeepRequired = commitMessage.includes("DEEP");
+        let syncScriptPrefix = '';
+        if (isDeepRequired) {
+          syncScriptPrefix = 'DEEP=true ';
+        }
+        
+        console.log("Running GIT sync script...");
+        exec(`${syncScriptPrefix}${__dirname}/../sync`, (error, stdout, stderr) => {
+            if (error) {
+                console.log(`error: ${error.message}`);
+                return;
+            }
+            if (stderr) {
+                // console.log(`stderr: ${stderr}`);
+                // return;
+            }
+            // console.log(`stdout: ${stdout}`);
+            
+            console.log("GIT sync script completed.");
+            console.log("");
+        });
+        
+      }
+    }
+  }
+});
+
+const source = new EventSource(GITHUB_WEBHOOK_URL);
+source.onmessage = (event) => {
+  const webhookEvent = JSON.parse(event.data);
+  webhooks
+    .verifyAndReceive({
+      id: webhookEvent["x-request-id"],
+      name: webhookEvent["x-github-event"],
+      signature: webhookEvent["x-hub-signature"],
+      payload: webhookEvent.body,
+    })
+    .catch(console.error);
+};
+source.onopen = () => console.log("Listening for GIT commits from FlutterFlow...\n");

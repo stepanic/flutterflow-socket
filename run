@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# USAGE i.e. 
+# ./run 000
+
+if [ "$#" -ne 1 ]
+then
+  echo "Usage: ./run <FLUTTER_DEVICE_ID>"
+  exit 1
+fi
+
+# $1 is the flutter device ID
+flutter run -d "$1" --pid-file /tmp/flutter.pid

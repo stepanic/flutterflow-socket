@@ -1,0 +1,24 @@
+#!/bin/bash
+
+git config pull.rebase false
+export GIT_MERGE_AUTOEDIT=no
+
+git add .
+git commit -m "Local changes before sync"
+git push
+
+if ! git pull origin flutterflow; then
+	exit 1 # break execution if GIT conflict occured
+fi
+
+if [ "$DEEP" = true ] ; then
+
+  flutter pub get
+  flutter packages pub run build_runner build --delete-conflicting-outputs
+  flutter pub run flutter_launcher_icons:main
+  
+fi
+
+git add .
+git commit -m "Local changes after sync"
+git push

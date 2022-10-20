@@ -1,0 +1,20 @@
+{
+  "name": "github-auto-sync",
+  "version": "1.0.0",
+  "description": "",
+  "main": "listen",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matija Stepanic",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/webhooks": "^10.3.0",
+    "eventsource": "^2.0.2",
+    "smee-client": "^1.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.0"
+  },
+  "type": "commonjs"
+}
