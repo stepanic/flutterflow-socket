@@ -1,6 +1,10 @@
 # flutterflow-socket
 Automatic Hot Reload of Flutter app after Push to repository at FlutterFlow without any manual source pull and app reload, because every development second matter!
 
+If this project help you reduce time to develop, you can give me a cup of coffee :)
+
+[![Donate](https://img.shields.io/badge/DONATE-%24-brightgreen)(https://ko-fi.com/stepanic)]
+
 ## Demo
 
 ![demo](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/000-demo.gif)
