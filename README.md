@@ -82,3 +82,7 @@ When adding widgets in FlutterFlow which is changing dependencies in the `pubspa
 If this project help you reduce time to develop, you can give me a cup of coffee :)
 
 [![Donate](https://img.shields.io/badge/DONATE-%24-brightgreen)](https://ko-fi.com/stepanic)
+
+## Author 
+
+You can find more about the author at https://experts.flutterflow.io/ and on the https://www.toptal.com/resume/matija-stepanic/N8zLEO/worlds-top-talent
