@@ -8,6 +8,8 @@ Automatic Hot Reload of Flutter app after Push to repository at FlutterFlow with
 
 `curl -L -k https://github.com/stepanic/flutterflow-socket/archive/refs/heads/main.zip | tar -xz --strip-components=1 flutterflow-socket-main/run flutterflow-socket-main/watch flutterflow-socket-main/tools; chmod +x ./run ./watch ./tools/sync ./tools/hotreloader.sh ./tools/github/listen; git add ./run ./watch ./tools && git commit -m "Installed flutterflow-socket" && git push`
 
+![Installation](https://raw.githubusercontent.com/stepanic/flutterflow-socket/692874364f8fa85fa2c198d6d31a2b7ef48d533e/screenshots/001-installation.png)
+
 3. follow the `Setup` instructions
 
 ## 2. Setup
