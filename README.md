@@ -33,6 +33,7 @@ Automatic Hot Reload of Flutter app after Push to repository at FlutterFlow with
 
 1. get a `<DEVICE_ID>` with `flutter devices`
 2. run the Flutter app on the device with `./run <DEVICE_ID>`
+![run 000](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/007-usage-run-with-flutter-device-id.png)
 3. open another terminal window/tab and watch for local and remote changes with `./watch`
 4. make some changes in the FlutterFlow project and click to `Push to Repository`
 5. repeat 4th step multiple times :))
