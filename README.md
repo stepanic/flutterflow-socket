@@ -38,6 +38,7 @@ Automatic Hot Reload of Flutter app after Push to repository at FlutterFlow with
 ![watch](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/008-usage-watch.png)
 4. make some changes in the FlutterFlow project and click to `Push to Repository`
 ![Push to Repository](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/009-usage-ff-push-to-repository.png)
+![Pushed to Repository](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/010-usage-ff-pushed-to-repository.png)
 5. repeat 4th step multiple times :))
 
 ## Example
