@@ -77,4 +77,8 @@ When adding widgets in FlutterFlow which is changing dependencies in the `pubspa
 - look at https://github.com/stepanic/flutterflow-socket/blob/main/tools/github/listen#L44-L57
 ![advanced DEEP sync](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/012-advanced-deep-sync.png)
 
+## Buy me a coffee :))
 
+If this project help you reduce time to develop, you can give me a cup of coffee :)
+
+[![Donate](https://img.shields.io/badge/DONATE-%24-brightgreen)](https://ko-fi.com/stepanic)
