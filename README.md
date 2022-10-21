@@ -1,5 +1,5 @@
 # flutterflow-socket
-Automatic Hot Reload of Flutter app after Push to repository at FlutterFlow without any manual source pull and app reload.
+Automatic Hot Reload of Flutter app after Push to repository at FlutterFlow without any manual source pull and app reload, because every development second matter!
 
 ## 1. Installation
 
