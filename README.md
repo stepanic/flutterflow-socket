@@ -19,6 +19,7 @@ Automatic Hot Reload of Flutter app after Push to repository at FlutterFlow with
 2. install `entr` (for MacOS `brew install entr`)
 ![brew install entr](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/003-setup-brew-install-entr.png)
 3. create new channel at `smee.io` by visiting https://smee.io/new
+![smee.io/new](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/004-setup-smee-channel.png)
 4. copy `Webhook Proxy URL` from previous step and paste it to the `GITHUB_WEBHOOK_URL` variable in `./watch` script
 5. OPTIONAL: change `GITHUB_WEBHOOK_SECRET` at `./watch`
 6. add a new Webhook at GitHub `https://github.com/<ORG_ID|USERNAME>/<REPO_ID>/settings/hooks/new`
