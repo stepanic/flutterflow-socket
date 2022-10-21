@@ -85,4 +85,4 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 
 ## Author 
 
-You can find more about the tool author at https://experts.flutterflow.io/ and on the https://www.toptal.com/resume/matija-stepanic/N8zLEO/worlds-top-talent
+Please find the the tool author at https://experts.flutterflow.io/, and check references at https://www.toptal.com/resume/matija-stepanic/N8zLEO/worlds-top-talent
