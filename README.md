@@ -3,7 +3,7 @@ Automatic Hot Reload of Flutter app after Push to repository at FlutterFlow with
 
 If this project help you reduce time to develop, you can give me a cup of coffee :)
 
-[![Donate](https://img.shields.io/badge/DONATE-%24-brightgreen)(https://ko-fi.com/stepanic)]
+[![Donate](https://img.shields.io/badge/DONATE-%24-brightgreen)](https://ko-fi.com/stepanic)
 
 ## Demo
 
