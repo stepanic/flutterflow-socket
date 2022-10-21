@@ -39,6 +39,7 @@ Automatic Hot Reload of Flutter app after Push to repository at FlutterFlow with
 4. make some changes in the FlutterFlow project and click to `Push to Repository`
 ![Push to Repository](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/009-usage-ff-push-to-repository.png)
 ![Pushed to Repository](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/010-usage-ff-pushed-to-repository.png)
+![Reloaded on device](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/011-usage-ff-reloaded-on-device.png)
 5. repeat 4th step multiple times :))
 
 ## Example
@@ -66,5 +67,6 @@ If you want to try how it works before installation at your project then clone t
 When adding widgets in FlutterFlow which is changing dependencies in the `pubspac.yaml` or there are modification at Firestore schema or app icon is changed then add `DEEP` to the commit message before pushing to the repository. For more details please check this https://github.com/stepanic/flutterflow-socket/blob/main/tools/sync#L14-L20
 
 - look at https://github.com/stepanic/flutterflow-socket/blob/main/tools/github/listen#L44-L57
+![advanced DEEP sync](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/012-advanced-deep-sync.png)
 
 
