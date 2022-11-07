@@ -10,4 +10,4 @@ then
 fi
 
 # $1 is the flutter device ID
-flutter run -d "$1" --pid-file /tmp/flutter.pid
+flutter run -d "$1" --pid-file "/tmp/flutter-$1.pid"
