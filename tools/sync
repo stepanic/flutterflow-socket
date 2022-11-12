@@ -5,6 +5,9 @@ export GIT_MERGE_AUTOEDIT=no
 
 git add .
 git commit -m "Local changes before sync"
+
+git pull
+
 git push
 
 if ! git pull origin flutterflow; then
