@@ -21,6 +21,11 @@ const WEBHOOK_GIT_HEAD_COMMIT_AUTHOR_USERNAME = "FlutterFlowEng";
 
 webhooks.onAny(({ id, name, payload }) => {
   // console.log(name, "event received", id, payload);
+
+  // console.log("Checking if commit is from FlutterFlow...");
+  // console.log(WEBHOOK_NAME + " === " + name);
+  // console.log(WEBHOOK_GIT_REF + " === " + payload.ref);
+  // console.log(WEBHOOK_GIT_HEAD_COMMIT_AUTHOR_USERNAME + " === " + payload.head_commit.author.username);
   
   if (name === WEBHOOK_NAME) {
     if (payload.ref === WEBHOOK_GIT_REF) {
