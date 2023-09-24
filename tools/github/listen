@@ -17,7 +17,7 @@ const webhooks = new Webhooks({
 
 const WEBHOOK_NAME = "push";
 const WEBHOOK_GIT_REF = "refs/heads/flutterflow";
-const WEBHOOK_GIT_HEAD_COMMIT_AUTHOR_USERNAME = "flutterflow-github-app[bot]";
+const WEBHOOK_GIT_HEAD_COMMIT_AUTHOR_USERNAME = "FlutterFlowEng";
 
 webhooks.onAny(({ id, name, payload }) => {
   // console.log(name, "event received", id, payload);
