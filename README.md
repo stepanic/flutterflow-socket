@@ -22,17 +22,13 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 
 ## 2. Setup
 
-1. install dependencies `npm install -- prefix ./tools/github`
-![npm install](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/002-setup-npm-install.png)
-2. install `entr` (for MacOS `brew install entr`)
+1. install `entr` (for MacOS `brew install entr`)
 ![brew install entr](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/003-setup-brew-install-entr.png)
-3. create new channel at `smee.io` by visiting https://smee.io/new
-![smee.io/new](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/004-setup-smee-channel.png)
-4. copy `Webhook Proxy URL` from previous step and paste it to the `GITHUB_WEBHOOK_URL` variable in `./watch` script
-5. OPTIONAL: change `GITHUB_WEBHOOK_SECRET` at `./watch` or leave it to default `ff-my-github-webhook-secret`
+2. copy `Webhook Proxy URL` from installation output or read it from the `GITHUB_WEBHOOK_URL` variable in `./watch` script
+3. OPTIONAL: change `GITHUB_WEBHOOK_SECRET` at `./watch` or leave it to default `ff-my-github-webhook-secret`
 ![setup ENV variables](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/005-setup-watch-config.png)
-6. add a new Webhook at GitHub `https://github.com/<ORG_ID|USERNAME>/<REPO_ID>/settings/hooks/new`
-  - `Payload URL` = `Webhook Proxy URL` from 3rd step
+4. add a new Webhook at GitHub `https://github.com/<ORG_ID|USERNAME>/<REPO_ID>/settings/hooks/new`
+  - `Payload URL` = `Webhook Proxy URL` from 2nd step
   - `Content type` = `application/json`
   - `Secret` = `GITHUB_WEBHOOK_SECRET` from `./watch`
 ![new webhook at github](https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/screenshots/006-setup-github-webhook-new.png)
