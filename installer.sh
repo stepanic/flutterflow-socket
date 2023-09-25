@@ -31,6 +31,14 @@ curl -L -k https://github.com/stepanic/flutterflow-socket/archive/refs/heads/mai
 chmod +x ./run ./watch ./tools/sync ./tools/hotreloader.sh ./tools/github/listen
 cd ./tools/github && npm install && cd ../..
 
+NEW_GITHUB_WEBHOOK_URL=$(curl -Ls -o /dev/null -w %{url_effective} https://smee.io/new)
+echo $NEW_GITHUB_WEBHOOK_URL
+
+$search="https://smee.io/<CHANNEL_ID>"
+$replace=$NEW_GITHUB_WEBHOOK_URL
+$filename="./watch"
+sed -i "s/$search/$replace/" $filename
+
 git add ./run ./watch ./tools
 git commit -m "Installed flutterflow-socket"
 git push
