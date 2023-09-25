@@ -18,7 +18,8 @@ else
     exit 1
 fi
 
-if git rev-parse --git-dir > /dev/null 2>&1; then
+if git rev-parse --git-dir > /dev/null
+then
   echo "is `git` repo ✅"
 else
   echo "is NOT `git` repo ❌"
