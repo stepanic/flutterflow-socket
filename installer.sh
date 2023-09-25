@@ -34,10 +34,12 @@ cd ./tools/github && npm install && cd ../..
 NEW_GITHUB_WEBHOOK_URL=$(curl -Ls -o /dev/null -w %{url_effective} https://smee.io/new)
 echo $NEW_GITHUB_WEBHOOK_URL
 
-$search='https://smee.io/<CHANNEL_ID>'
-$replace=$NEW_GITHUB_WEBHOOK_URL
-$filename='./watch'
-sed -i "s/$search/$replace/" $filename
+$SEARCH='https://smee.io/<CHANNEL_ID>'
+ESCAPED_SEARCH=$(printf '%s\n' "$SEARCH" | sed -e 's/[]\/$*.^[]/\\&/g');
+$REPLACE=$NEW_GITHUB_WEBHOOK_URL
+ESCAPED_REPLACE=$(printf '%s\n' "$REPLACE" | sed -e 's/[]\/$*.^[]/\\&/g');
+$WATCH_FILENAME='./watch'
+sed -i "s/$ESCAPED_SEARCH/$ESCAPED_REPLACE/" $WATCH_FILENAME
 
 git add ./run ./watch ./tools
 git commit -m "Installed flutterflow-socket"
