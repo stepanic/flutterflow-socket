@@ -20,9 +20,9 @@ fi
 
 if git rev-parse --git-dir > /dev/null
 then
-  echo "is `git` repo ✅"
+  echo 'is `git` repo ✅'
 else
-  echo "is NOT `git` repo ❌"
+  echo 'is NOT `git` repo ❌'
   exit 1
 fi
 
