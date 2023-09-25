@@ -14,7 +14,7 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 1. position to your FlutterFlow project in terminal `cd /path/to/your/ff/project`
 2. copy directory `./tools` and scripts `./run` and `./watch` from this repository to your existing FlutterFlow app with this command
 
-`curl -sSL https://raw.githubusercontent.com/stepanic/flutterflow-socket/v0.1.5/installer.sh | sh`
+`curl -sSL https://raw.githubusercontent.com/stepanic/flutterflow-socket/main/installer.sh | sh`
 
 ![Installation](https://raw.githubusercontent.com/stepanic/flutterflow-socket/692874364f8fa85fa2c198d6d31a2b7ef48d533e/screenshots/001-installation.png)
 
