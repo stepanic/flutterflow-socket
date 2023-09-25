@@ -39,7 +39,7 @@ ESCAPED_SEARCH=$(printf '%s\n' "$SEARCH" | sed -e 's/[]\/$*.^[]/\\&/g');
 REPLACE="$NEW_GITHUB_WEBHOOK_URL"
 ESCAPED_REPLACE=$(printf '%s\n' "$REPLACE" | sed -e 's/[]\/$*.^[]/\\&/g');
 WATCH_FILENAME='./watch'
-sed -i "s/$ESCAPED_SEARCH/$ESCAPED_REPLACE/" $WATCH_FILENAME
+sed -i '' "s/$ESCAPED_SEARCH/$ESCAPED_REPLACE/" $WATCH_FILENAME
 
 git add ./run ./watch ./tools
 git commit -m "Installed flutterflow-socket"
