@@ -34,9 +34,9 @@ cd ./tools/github && npm install && cd ../..
 NEW_GITHUB_WEBHOOK_URL=$(curl -Ls -o /dev/null -w %{url_effective} https://smee.io/new)
 echo $NEW_GITHUB_WEBHOOK_URL
 
-$search="https://smee.io/<CHANNEL_ID>"
+$search='https://smee.io/<CHANNEL_ID>'
 $replace=$NEW_GITHUB_WEBHOOK_URL
-$filename="./watch"
+$filename='./watch'
 sed -i "s/$search/$replace/" $filename
 
 git add ./run ./watch ./tools
