@@ -18,6 +18,13 @@ else
     exit 1
 fi
 
+if git rev-parse --git-dir > /dev/null 2>&1; then
+  echo "is `git` repo ✅"
+else
+  echo "is NOT `git` repo ❌"
+  exit 1
+fi
+
 curl -L -k https://github.com/stepanic/flutterflow-socket/archive/refs/heads/main.zip | tar -xz --strip-components=1 flutterflow-socket-main/run flutterflow-socket-main/watch flutterflow-socket-main/tools
 
 chmod +x ./run ./watch ./tools/sync ./tools/hotreloader.sh ./tools/github/listen
