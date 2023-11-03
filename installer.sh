@@ -44,5 +44,7 @@ git add ./run ./watch ./tools
 git commit -m "Installed flutterflow-socket"
 
 echo ""
+echo "Open the settings of your GitHub repository and configure the webhook."
+echo 'https://github.com/<GITHUB_ORG>/<GITHUB_REPO>/settings/hooks/new'
 echo "GITHUB_WEBHOOK_URL=$NEW_GITHUB_WEBHOOK_URL"
 echo 'GITHUB_WEBHOOK_SECRET="ff-my-github-webhook-secret"'
