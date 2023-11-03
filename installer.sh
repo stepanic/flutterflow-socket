@@ -45,3 +45,4 @@ git commit -m "Installed flutterflow-socket"
 
 echo ""
 echo "GITHUB_WEBHOOK_URL=$NEW_GITHUB_WEBHOOK_URL"
+echo 'GITHUB_WEBHOOK_SECRET="ff-my-github-webhook-secret"'
